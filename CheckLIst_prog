@@ -1,0 +1,36 @@
+def organize_tasks():
+  """Organizes daily tasks into completed and incomplete lists."""
+
+  # Start with an empty checklist, completed_tasks, and incomplete_tasks
+  checklist = []
+  completed_tasks = []
+  incomplete_tasks = []
+
+  # Get tasks from the user
+  while True:
+    task = input("Enter a task (or type 'done' to finish): ")
+    if task.lower() == 'done':
+      break
+    checklist.append(task)
+
+  # Review tasks and mark as complete or incomplete
+  print("\nReview your tasks:")
+  for task in checklist:
+    status = input(f"Was '{task}' completed? (yes/no): ")
+    if status.lower() == 'yes':
+      completed_tasks.append(task)
+    else:
+      incomplete_tasks.append(task)
+
+  # Display the organized tasks
+  print("\nCompleted Tasks:")
+  for task in completed_tasks:
+    print(f"- {task}")
+
+  print("\nIncomplete Tasks:")
+  for task in incomplete_tasks:
+    print(f"- {task}")
+
+# Run the program
+if __name__ == "__main__":
+  organize_tasks()
